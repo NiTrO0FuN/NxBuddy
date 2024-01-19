@@ -3,7 +3,8 @@ const onlineStatusLabel = document.getElementById("onlineStatus").children[0]
 const onlineStatusToggle = document.getElementById("onlineStatus").getElementsByTagName("input")[0]
 
 onlineStatusLabel.innerText = chrome.i18n.getMessage("toggleOnlineStatus")
-onlineStatusToggle.oninput = function() {
+onlineStatusToggle.oninput = async function() {
+    chrome.permissions.request({"origins": ["*://nxserv.gg/*"]})
     chrome.storage.local.set({onlineStatus: this.checked})
 }
 
