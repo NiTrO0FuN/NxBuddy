@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+
+    "name": "__MSG_extensionName__",
+    "description": "__MSG_extensionDescription__",
+    "version": "1.0",
+  
+    "default_locale": "en",
+
+    "icons": {
+      "48": "icons/icon48.png",
+      "96": "icons/icon96.png"
+    },
+
+    "page_action": {
+      "default_title": "NxBuddy",
+      "default_icon": {
+        "19": "icons/icon19.png",
+        "38": "icons/icon38.png"
+      },
+      "default_popup": "popup/popup.html",
+      "show_matches": ["*://nxserv.gg/*"]
+    },
+
+    "permissions": ["storage", "webRequest"], 
+    "host_permissions": ["*://nxserv.gg/*"],
+
+    "background": {
+      "scripts": ["background.js"]
+    },
+
+    "content_scripts": [
+      {
+        "matches": ["*://nxserv.gg/*"],
+        "js": ["content/dom_modifiers.js","content/image_upload.js","content/nxbuddy.js"],
+        "css": ["content/nxbuddy.css"],
+        "run_at": "document_start"
+      }
+    ]
+  }
+  
+
+  

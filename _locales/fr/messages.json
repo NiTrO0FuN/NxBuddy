@@ -1,0 +1,36 @@
+{
+  "extensionName": {
+    "message": "NxBuddy",
+    "description": "Nom de l'extension"
+  },
+
+  "extensionDescription": {
+    "message": "Améliore le site Web Nx avec des fonctionnalités supplémentaires.",
+    "description": "Description de l'extension"
+  },
+  
+  "toggleOnlineStatus": {
+    "message": "Visualiseur de connexion",
+    "description": "Label pour le basculement du visualiseur de connexion"
+  },
+
+  "apiKey": {
+		"message": "Clé API ImgBB",
+		"description": "Label pour le clé API ImgBB"
+	},
+
+  "apiKey_placeholder": {
+    "message": "Votre clé API ImgBB (32 charactères)",
+    "description": "Placeholder pour l'entrée de la clé API"
+  },
+
+  "wrongAPIkey": {
+		"message": "Erreur, clé API incorrecte",
+		"description": "Erreur lors de l'upload de l'image dans le textarea"
+	},
+
+  "toggleImgBB": {
+		"message": "ImgBB auto-upload",
+		"description": "Label pour le basculement ImgBB"
+	}
+}
