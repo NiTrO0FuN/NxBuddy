@@ -1,0 +1,36 @@
+{
+	"extensionName": {
+		"message": "NxBuddy",
+		"description": "Extension name"
+	},
+
+	"extensionDescription": {
+		"message": "Improves the Nx website with added functionalities.",
+		"description": "Extension description"
+	},
+
+	"toggleOnlineStatus": {
+		"message": "Quick online visualisator",
+		"description": "Label for the online status toggle"
+	},
+
+	"apiKey": {
+		"message": "ImgBB API key",
+		"description": "Label for API key input"
+	},
+
+	"apiKey_placeholder": {
+		"message": "Your ImgBB API key (32 characters)",
+		"description": "Placeholder for the API key input"
+	},
+
+	"wrongAPIkey": {
+		"message": "Error, incorrect API key",
+		"description": "Error 400 when trying to upload image into textarea"
+	},
+
+	"toggleImgBB": {
+		"message": "ImgBB auto-upload",
+		"description": "Label for the ImgBB toggle"
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"extensionName": {
+		"message": "NxBuddy",
+		"description": "Название расширения"
+	},
+
+	"extensionDescription": {
+		"message": "Улучшает веб-сайт Nx за счет дополнительных функций",
+		"description": "Описание расширения"
+	},
+
+	"toggleOnlineStatus": {
+		"message": "Быстрый онлайн-визуализатор",
+		"description": "Заголовок для флажка онлайн-статуса"
+	},
+
+	"apiKey": {
+		"message": "ImgBB API ключ",
+		"description": "Вывеска для ввода API ключа"
+	},
+
+	"apiKey_placeholder": {
+		"message": "Ваш ImgBB API ключ (32 символа)",
+		"description": "Заголовок для ввода API ключа"
+	},
+
+	"wrongAPIkey": {
+		"message": "Ошибка, неверный API ключ",
+		"description": "Ошибка при попытке загрузить изображения в текстовую зону."
+	},
+
+	"toggleImgBB": {
+		"message": "ImgBB авто-загрузка",
+		"description": "Заголовок для ImgBB флажка"
+	}
+}
