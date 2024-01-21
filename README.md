@@ -1,1 +1,1 @@
-Source code for the [NxBuddy](https://addons.mozilla.org/fr/firefox/addon/nxbuddy/) firefox extension.
+Source code for the [NxBuddy](https://chromewebstore.google.com/detail/nxbuddy/hgohjeeplnmikjcengjamnnapmkikfga) chrome extension.
