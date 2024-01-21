@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			reader.onload = () => {
 				const base64string = reader.result.split(',')[1]
 				uploadImage(base64string).then(r => {
-					if(r.status===400){target.append(chrome.i18n.getMessage("wrongAPIkey"))}
+					if(r.status===400){target.addAtCaret(chrome.i18n.getMessage("wrongAPIkey"))}
 					else if(r.status===200){
-						target.append(`[img]${r.url}[/img]`)
+						target.addAtCaret(`[img]${r.url}[/img]`)
 					}
 				})
 			} 
