@@ -4,11 +4,6 @@
     "name": "__MSG_extensionName__",
     "description": "__MSG_extensionDescription__",
     "version": "1.0.1",
-    "browser_specific_settings": {
-      "gecko": {
-        "id": "nxbuddy@nitrofun.com"
-      }
-    },
     
     "default_locale": "en",
 
@@ -17,7 +12,7 @@
       "96": "icons/icon96.png"
     },
 
-    "page_action": {
+    "action": {
       "default_title": "NxBuddy",
       "default_icon": {
         "19": "icons/icon19.png",
@@ -31,7 +26,7 @@
     "host_permissions": ["*://nxserv.gg/*"],
 
     "background": {
-      "scripts": ["background.js"]
+      "service_worker": "background.js"
     },
 
     "content_scripts": [
