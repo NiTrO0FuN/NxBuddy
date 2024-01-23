@@ -49,18 +49,30 @@ chrome.storage.local.get(["onlineStatus", "imgbb"]).then(r => {
     if(r.imgbb){wantAutoUpload = r.imgbb}
 })
 
+let lastUrl = location.href
+
 const observer = new MutationObserver(mutations => {
+    if(location.href != lastUrl) {
+        lastUrl = location.href
+         //Report buddy
+        if(lastUrl == "https://nxserv.gg/forum/category/2/create"){addReportBuddy()}
+    }
     mutations.forEach(mutation => {
-        if(mutation.type === "childList" && wantOnlineStatus) {
-            mutation.addedNodes.forEach(addedNode => {
-                connectedIndicator(addedNode)
-            })
+        if(mutation.type === "childList") {
+            //Quick online visualisator
+            if(wantOnlineStatus){
+                mutation.addedNodes.forEach(addedNode => {
+                    connectedIndicator(addedNode)
+                })
+            }
         }
     })
 })
 
 document.addEventListener("DOMContentLoaded", () => {
     observer.observe(document.body, {childList: true, subtree: true})
+
+    if(lastUrl == "https://nxserv.gg/forum/category/2/create"){addReportBuddy()}
 
 	document.body.addEventListener("drop", (e) => {
 		e.preventDefault()

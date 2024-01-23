@@ -3,7 +3,7 @@
 
     "name": "__MSG_extensionName__",
     "description": "__MSG_extensionDescription__",
-    "version": "1.0.2",
+    "version": "1.1",
     "browser_specific_settings": {
       "gecko": {
         "id": "nxbuddy@nitrofun.com"
@@ -37,9 +37,16 @@
     "content_scripts": [
       {
         "matches": ["*://nxserv.gg/*"],
-        "js": ["content/dom_modifiers.js","content/image_upload.js","content/nxbuddy.js"],
+        "js": ["content/dom_modifiers.js","content/image_upload.js","content/report_buddy.js","content/nxbuddy.js"],
         "css": ["content/nxbuddy.css"],
         "run_at": "document_start"
+      }
+    ],
+
+    "web_accessible_resources": [
+      {
+        "resources": ["icons/icon.png"],
+        "matches": ["*://nxserv.gg/*"]
       }
     ]
   }

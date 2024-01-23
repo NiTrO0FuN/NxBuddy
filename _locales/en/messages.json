@@ -32,5 +32,63 @@
 	"toggleImgBB": {
 		"message": "ImgBB auto-upload",
 		"description": "Label for the ImgBB toggle"
+	},
+
+	"reportBuddyBtn": {
+		"message": "Use DarkRP report template",
+		"description": "Label for the report template button"
+	},
+
+	"dateString": {
+		"message": "$DATE$ at $TIME$",
+		"description": "Date and time in human readable format",
+		"placeholders": {
+			"date": {"content": "$1"},
+			"time": {"content": "$2"}
+		}
+	},
+
+	"validate": {
+		"message": "Confirm"
+	},
+	
+	"selectBrokenRules": {
+		"message":"Please select all broken rules",
+		"description": "Broken rules dialog selector title"
+	},
+
+	"report_title": {
+		"message":"Report against <name> | <steamID>",
+		"description": "Report post title"
+	},
+
+	"report_rpname": {
+		"message": "RP name of violator",
+		"description": "Field for player report"
+	},
+
+	"report_steamid": {
+		"message": "SteamID",
+		"description": "Field for player report"
+	},
+
+	"report_date": {
+		"message": "Date and time",
+		"description": "Field for player report"
+	},
+
+	"report_location": {
+		"message": "Server where this violation occured",
+		"description": "Field for player report"
+	},
+
+	"report_brokenrules": {
+		"message": "Rules broken",
+		"description": "Field for player report"
+	},
+
+	"report_proofs": {
+		"message": "Proof(s) (screenshots or videos)",
+		"description": "Field for player report"
 	}
 }
