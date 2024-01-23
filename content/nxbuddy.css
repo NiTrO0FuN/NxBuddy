@@ -5,3 +5,39 @@
 .disconnected {
     box-shadow: 0px 0px 10px 0px red
 }
+
+.buddyLine {
+    display: flex;
+    align-content: center;
+}
+
+div.buddyLine btn {
+    margin-left: 10px;
+}
+
+dialog.brokenRules {
+    background: #30303a;
+    background-image: url(https://nxserv.gg/static/what_the_hex.png);
+    color: white;
+    width: 50vw;
+    height: 70vh;
+    border: none;
+    position: relative;
+
+    &::backdrop {
+        backdrop-filter: blur(4px);
+    }
+
+    li {
+        cursor: pointer;
+        &.selected {
+            border: 2px solid #346abf
+        }
+    }
+
+    .validate {
+        position: sticky;
+        bottom: 0;
+        text-align: center;
+    }
+}

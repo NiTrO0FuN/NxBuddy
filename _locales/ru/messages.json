@@ -32,5 +32,58 @@
 	"toggleImgBB": {
 		"message": "ImgBB авто-загрузка",
 		"description": "Заголовок для ImgBB флажка"
+	},
+
+	"reportBuddyBtn": {
+		"message": "Использовать шаблон отчета DarkRP",
+		"description": "Метка для кнопки шаблона жалобы"
+	},
+
+	"dateString": {
+		"message": "$DATE$ в $TIME$",
+		"description": "Дата и время в удобочитаемом формате.",
+		"placeholders": {
+			"date": {"content": "$1"},
+			"time": {"content": "$2"}
+		}
+	},
+
+	"validate": {
+		"message": "Подтвердить"
+	},
+
+	"selectBrokenRules": {
+		"message":"Выбрать все нарушенные правила",
+		"description": "Заголовок диалогового окна выбора нарушенных правил"
+	},
+
+	"report_title": {
+		"message": "Жалоба на <имя> | <steamID>",
+		"description": "Название жалобы"
+	},
+
+	"report_rpname": {
+		"message": "Название ролевой игры",
+		"description": "Поле в жалобе"
+	},
+
+	"report_date": {
+		"message": "Дата и час",
+		"description": "Field for player report"
+	},
+
+	"report_location": {
+		"message": "Сервер, где это произошло",
+		"description": "Поле в жалобе"
+	},
+
+	"report_brokenrules": {
+		"message": "Правило(а) нарушено",
+		"description": "Поле в жалобе"
+	  },
+
+	"report_proofs": {
+		"message": "Доказательства (скриншоты и видео)",
+		"description": "Поле в жалобе"
 	}
 }

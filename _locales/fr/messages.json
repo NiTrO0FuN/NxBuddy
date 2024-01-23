@@ -1,36 +1,89 @@
 {
-  "extensionName": {
-    "message": "NxBuddy",
-    "description": "Nom de l'extension"
-  },
+	"extensionName": {
+    	"message": "NxBuddy",
+    	"description": "Nom de l'extension"
+	},
 
-  "extensionDescription": {
-    "message": "Améliore le site web https://nxserv.gg/ en ajoutant des fonctionnalités supplémentaires telles qu'un indicateur de connexion pour les joueurs et un uploader d'images pour les posts!",
-    "description": "Description de l'extension"
-  },
+	"extensionDescription": {
+    	"message": "Améliore le site web https://nxserv.gg/ en ajoutant des fonctionnalités supplémentaires telles qu'un indicateur de connexion pour les joueurs et un uploader d'images pour les posts!",
+    	"description": "Description de l'extension"
+	},
   
-  "toggleOnlineStatus": {
-    "message": "Visualiseur de connexion",
-    "description": "Label pour le basculement du visualiseur de connexion"
-  },
+	"toggleOnlineStatus": {
+    	"message": "Visualiseur de connexion",
+    	"description": "Label pour le basculement du visualiseur de connexion"
+	},
 
-  "apiKey": {
+	"apiKey": {
 		"message": "Clé API ImgBB",
 		"description": "Label pour le clé API ImgBB"
 	},
 
-  "apiKey_placeholder": {
-    "message": "Votre clé API ImgBB (32 charactères)",
-    "description": "Placeholder pour l'entrée de la clé API"
-  },
+	"apiKey_placeholder": {
+    	"message": "Votre clé API ImgBB (32 charactères)",
+    	"description": "Placeholder pour l'entrée de la clé API"
+	},
 
-  "wrongAPIkey": {
+  	"wrongAPIkey": {
 		"message": "Erreur, clé API incorrecte",
 		"description": "Erreur lors de l'upload de l'image dans le textarea"
 	},
 
-  "toggleImgBB": {
+  	"toggleImgBB": {
 		"message": "ImgBB auto-upload",
 		"description": "Label pour le basculement ImgBB"
+	},
+
+  	"reportBuddyBtn": {
+		"message": "Utiliser le template de plainte DarkRP",
+		"description": "Label pour le bouton de template de plainte"
+	},
+
+	"dateString": {
+		"message": "$DATE$ à $TIME$",
+		"description": "Date et heure dans un format lisible par les humains",
+		"placeholders": {
+			"date": {"content": "$1"},
+			"time": {"content": "$2"}
+		}
+	},
+
+	"validate": {
+		"message": "Valider"
+	},
+
+	"selectBrokenRules": {
+		"message":"Séléctionnez toutes les règles enfreintes",
+		"description": "Titre de la fenêtre de dialogue pour séléctionner les règles enfreintes"
+	},
+
+	"report_title": {
+		"message":"Plainte contre <nom> | <steamID>",
+		"description": "Titre de la plainte"
+	},
+
+	"report_rpname": {
+		"message": "Nom RP",
+		"description": "Champ de la plainte"
+	},
+
+	"report_date": {
+		"message": "Date et heure",
+		"description": "Champ de la plainte"
+	},
+
+	"report_location": {
+		"message": "Serveur où cela s'est produit",
+		"description": "Champ de la plainte"
+	},
+
+	"report_brokenrules": {
+		"message": "Règle(s) enfreinte(s)",
+		"description": "Champ de la plainte"
+	},
+
+	"report_proofs": {
+		"message": "Preuve(s) (screenshots or videos)",
+		"description": "Champ de la plainte"
 	}
 }
