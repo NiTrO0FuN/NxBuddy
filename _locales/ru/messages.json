@@ -34,8 +34,13 @@
 		"description": "Заголовок для ImgBB флажка"
 	},
 
-	"reportBuddyBtn": {
+	"reportBuddyBtnDarkRP": {
 		"message": "Использовать шаблон отчета DarkRP",
+		"description": "Метка для кнопки шаблона жалобы"
+	},
+
+	"reportBuddyBtnTTT": {
+		"message": "Использовать шаблон отчета TTT",
 		"description": "Метка для кнопки шаблона жалобы"
 	},
 
@@ -64,6 +69,11 @@
 
 	"report_rpname": {
 		"message": "Название ролевой игры",
+		"description": "Поле в жалобе"
+	},
+
+	"report_name": {
+		"message": "имя нарушителя",
 		"description": "Поле в жалобе"
 	},
 
