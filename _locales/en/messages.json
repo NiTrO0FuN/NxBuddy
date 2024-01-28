@@ -34,8 +34,13 @@
 		"description": "Label for the ImgBB toggle"
 	},
 
-	"reportBuddyBtn": {
+	"reportBuddyBtnDarkRP": {
 		"message": "Use DarkRP report template",
+		"description": "Label for the report template button"
+	},
+
+	"reportBuddyBtnTTT": {
+		"message": "Use TTT report template",
 		"description": "Label for the report template button"
 	},
 
@@ -64,6 +69,11 @@
 
 	"report_rpname": {
 		"message": "RP name of violator",
+		"description": "Field for player report"
+	},
+
+	"report_name": {
+		"message": "Name of violator",
 		"description": "Field for player report"
 	},
 
