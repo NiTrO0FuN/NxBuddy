@@ -34,8 +34,13 @@
 		"description": "Label pour le basculement ImgBB"
 	},
 
-  	"reportBuddyBtn": {
+  	"reportBuddyBtnDarkRP": {
 		"message": "Utiliser le template de plainte DarkRP",
+		"description": "Label pour le bouton de template de plainte"
+	},
+
+	"reportBuddyBtnTTT": {
+		"message": "Utiliser le template de plainte TTT",
 		"description": "Label pour le bouton de template de plainte"
 	},
 
@@ -67,6 +72,11 @@
 		"description": "Champ de la plainte"
 	},
 
+	"report_name": {
+		"message": "Pseudo",
+		"description": "Champ de la plainte"
+	},
+
 	"report_date": {
 		"message": "Date et heure",
 		"description": "Champ de la plainte"
@@ -83,7 +93,7 @@
 	},
 
 	"report_proofs": {
-		"message": "Preuve(s) (screenshots or videos)",
+		"message": "Preuve(s) (screenshots ou vidéos)",
 		"description": "Champ de la plainte"
 	}
 }
