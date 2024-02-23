@@ -54,7 +54,8 @@
 	},
 
 	"validate": {
-		"message": "Valider"
+		"message": "Valider",
+		"description": "Label du bouton de validation"
 	},
 
 	"selectBrokenRules": {
@@ -95,5 +96,15 @@
 	"report_proofs": {
 		"message": "Preuve(s) (screenshots ou vidéos)",
 		"description": "Champ de la plainte"
+	},
+
+	"search": {
+		"message": "Rechercher",
+		"description": "Label du bouton de recherche"
+	},
+
+	"search_placeholder": {
+		"message": "Contenu à rechercher",
+		"description": "Placeholder du label de recherche"
 	}
 }
