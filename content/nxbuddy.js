@@ -54,7 +54,7 @@ let lastUrl = location.href
 const observer = new MutationObserver(mutations => {
     if(location.href != lastUrl) {
         lastUrl = location.href
-         //Report buddy
+        // Report buddy
         if(lastUrl == "https://nxserv.gg/forum/category/2/create"){addReportBuddy()}
     }
     mutations.forEach(mutation => {
@@ -108,5 +108,8 @@ chrome.storage.local.onChanged.addListener((changes) => {
 chrome.runtime.onMessage.addListener((message) => {
     if(message === "onlineStatus" && wantOnlineStatus) {
         checkForAvatars()
+    }
+    else if(message === "searchBuddy" && document.URL === "https://nxserv.gg/forum") {
+        setTimeout(addSearchBuddy)
     }
 })

@@ -8,11 +8,30 @@
 
 .buddyLine {
     display: flex;
-    align-content: center;
+    align-items: center;
+
+    btn, input, .spinner {
+        margin-left: 10px;
+    }
+
+    .hide {
+        display: none
+    }
 }
 
-div.buddyLine btn {
-    margin-left: 10px;
+.search_result {
+    margin-bottom: 10px; 
+
+    &:last-of-type {
+        margin-bottom: 25px;
+    }   
+
+    img {
+        margin-right: 5px;
+    }
+
+    width: fit-content;
+    padding-inline: 10px;
 }
 
 dialog.brokenRules {

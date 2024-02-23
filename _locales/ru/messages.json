@@ -54,7 +54,8 @@
 	},
 
 	"validate": {
-		"message": "Подтвердить"
+		"message": "Подтвердить",
+		"description": "Метка кнопки проверки"
 	},
 
 	"selectBrokenRules": {
@@ -95,5 +96,15 @@
 	"report_proofs": {
 		"message": "Доказательства (скриншоты и видео)",
 		"description": "Поле в жалобе"
+	},
+
+	"search": {
+		"message": "Исследовать",
+		"description": "Метка кнопки поиска"
+	},
+
+	"search_placeholder": {
+		"message": "Контент для поиска",
+		"description": "Заполнитель метки поиска"
 	}
 }
