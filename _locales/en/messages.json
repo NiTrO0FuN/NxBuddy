@@ -54,7 +54,8 @@
 	},
 
 	"validate": {
-		"message": "Confirm"
+		"message": "Confirm",
+		"description": "Validation button label"
 	},
 	
 	"selectBrokenRules": {
@@ -100,5 +101,15 @@
 	"report_proofs": {
 		"message": "Proof(s) (screenshots or videos)",
 		"description": "Field for player report"
+	},
+
+	"search": {
+		"message": "Search",
+		"description": "Search button label"
+	},
+
+	"search_placeholder": {
+		"message": "Content to search",
+		"description": "Search label placeholder"
 	}
 }
