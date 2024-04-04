@@ -1,4 +1,4 @@
-//Online status toggle
+// Online status toggle
 const onlineStatusLabel = document.getElementById("onlineStatus").children[0]
 const onlineStatusToggle = document.getElementById("onlineStatus").getElementsByTagName("input")[0]
 
@@ -13,7 +13,7 @@ chrome.storage.local.get("onlineStatus").then(r => {
 });
 
 
-//ImgBB hosting
+// ImgBB hosting
 const apiKeyLabel = document.getElementById("imgbb").children[0].children[0]
 const apiKeyInput = document.getElementById("imgbb").children[0].children[1]
 const ImgBBLabel = document.getElementById("imgbb").children[1].children[0]
@@ -46,7 +46,7 @@ function isAPIkeyValid(key) {
     return /^[a-zA-Z0-9]{32}$/.test(key)
 }
 
-//Storage listener
+// Storage listener
 chrome.storage.local.onChanged.addListener(function(changes) {
     if(changes.apiKey) {
         if(isAPIkeyValid(changes.apiKey.newValue)) {
