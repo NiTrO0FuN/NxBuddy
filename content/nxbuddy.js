@@ -11,7 +11,7 @@ function checkOnlineStatus(sid64) {
 function connectedIndicator(node) {
     if(node.nodeName !== "DIV") {return}
 
-    //Thread posts
+    // Thread posts
     if(node.classList.contains("forum-post")) {
         const avatar_wrapper = node.getElementsByClassName("poster-area-avatar-wrapper")[0]
         const sid = avatar_wrapper.href.split("/").pop()
@@ -21,7 +21,7 @@ function connectedIndicator(node) {
         })
     } 
 
-    //Forum threads 
+    // Forum threads 
     else if(node.classList.contains("forum-thread")) {
         const threadBodies = node.getElementsByClassName("forum-thread-body")
 
@@ -52,14 +52,14 @@ chrome.storage.local.get(["onlineStatus", "imgbb"]).then(r => {
 let lastUrl = location.href
 
 const observer = new MutationObserver(mutations => {
-    if(location.href != lastUrl) {
+        if(location.href != lastUrl) {
         lastUrl = location.href
         // Report buddy
         if(lastUrl == "https://nxserv.gg/forum/category/2/create"){addReportBuddy()}
-    }
+            }
     mutations.forEach(mutation => {
         if(mutation.type === "childList") {
-            //Quick online visualisator
+            // Quick online visualisator
             if(wantOnlineStatus){
                 mutation.addedNodes.forEach(addedNode => {
                     connectedIndicator(addedNode)
@@ -71,7 +71,7 @@ const observer = new MutationObserver(mutations => {
 
 document.addEventListener("DOMContentLoaded", () => {
     observer.observe(document.body, {childList: true, subtree: true})
-
+    
     if(lastUrl == "https://nxserv.gg/forum/category/2/create"){addReportBuddy()}
 
 	document.body.addEventListener("drop", (e) => {

@@ -1,4 +1,4 @@
-//Get or update rules
+// Get or update rules
 let rules = {}
 chrome.storage.local.get("rules").then(async r => {
     let storedRules = r.rules
@@ -170,7 +170,7 @@ function addReportBuddy() {
     const form = document.getElementsByTagName("form")[0]
     const tabs = document.getElementsByClassName("react-tabs")[0]
 
-    //Report buddy
+    // Report buddy
     const reportBuddy = document.createElement("div")
     reportBuddy.classList.add("buddyLine")
 

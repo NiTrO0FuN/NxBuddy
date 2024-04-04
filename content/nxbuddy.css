@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
 
-    btn, input, .spinner {
+    btn, input, div, .spinner {
         margin-left: 10px;
     }
 
