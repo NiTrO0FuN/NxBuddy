@@ -59,13 +59,22 @@
 	},
 
 	"selectBrokenRules": {
-		"message":"Séléctionnez toutes les règles enfreintes",
+		"message": "Séléctionnez toutes les règles enfreintes",
 		"description": "Titre de la fenêtre de dialogue pour séléctionner les règles enfreintes"
 	},
 
+	"givePlayerInfo": {
+		"message": "Qui est le joueur visé par la plainte ?",
+		"description": "Player info dialog title"
+	},
+
 	"report_title": {
-		"message":"Plainte contre <nom> | <steamID>",
-		"description": "Titre de la plainte"
+		"message": "Plainte contre $NAME$ | $STEAMID$",
+		"description": "Titre de la plainte",
+		"placeholders": {
+			"name": {"content": "$1"},
+			"steamid": {"content": "$2"}
+		}
 	},
 
 	"report_rpname": {

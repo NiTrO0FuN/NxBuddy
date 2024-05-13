@@ -34,7 +34,7 @@
     padding-inline: 10px;
 }
 
-dialog.brokenRules {
+dialog.brokenRules, dialog.playerInfo {
     background: #30303a;
     background-image: url(https://nxserv.gg/static/what_the_hex.png);
     color: white;
@@ -46,17 +46,30 @@ dialog.brokenRules {
     &::backdrop {
         backdrop-filter: blur(4px);
     }
+    
+    .validate {
+        position: sticky;
+        bottom: 0;
+        text-align: center;
+    }
+}
 
+dialog.playerInfo {
+    width: 30vw;
+    height: fit-content;
+
+    div.inputs {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 16px;
+    }
+}
+
+dialog.brokenRules {
     li {
         cursor: pointer;
         &.selected {
             border: 2px solid #346abf
         }
-    }
-
-    .validate {
-        position: sticky;
-        bottom: 0;
-        text-align: center;
     }
 }
