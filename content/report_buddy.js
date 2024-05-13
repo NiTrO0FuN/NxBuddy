@@ -35,16 +35,19 @@ async function fetchRules(serverType) {
     return newRules
 }
 
-function writeReportTemplate(serverType, dialog, brokenRules) {
-    if(serverType === "darkrp"){writeDarkRPReportTemplate(dialog, brokenRules)}
-    else if(serverType === "ttt"){writeTTTReportTemplate(dialog, brokenRules)}
+function writeReportTemplate(serverType, playerInfo, brokenRules) {
+    if(serverType === "darkrp"){writeDarkRPReportTemplate(playerInfo, brokenRules)}
+    else if(serverType === "ttt"){writeTTTReportTemplate(playerInfo, brokenRules)}
 }
 
-function writeDarkRPReportTemplate(dialog, brokenRules) {
+function writeDarkRPReportTemplate(playerInfo, brokenRules) {
     const tabs = document.getElementsByClassName("react-tabs")[0]
 
     const title = document.querySelector("input[name='title']")
-    if(title.value!=chrome.i18n.getMessage("report_title")){title.addAtCaret(chrome.i18n.getMessage("report_title"))}
+    if(title.value!=chrome.i18n.getMessage("report_title")){
+        title.addAtCaret(chrome.i18n.getMessage("report_title", [playerInfo.name || `<${chrome.i18n.getMessage("report_rpname")}>`,
+                                                                playerInfo.steamid || `<${chrome.i18n.getMessage("report_steamid")}>`]))
+    }
 
     let brokenRulesQuotes = []
     for(const section in brokenRules) {
@@ -66,24 +69,26 @@ function writeDarkRPReportTemplate(dialog, brokenRules) {
 
 
     const report =
-`[h1]${chrome.i18n.getMessage("report_rpname")}:[/h1]\n
-[h1]${chrome.i18n.getMessage("report_steamid")}:[/h1]\n
+`[h1]${chrome.i18n.getMessage("report_rpname")}:[/h1]${playerInfo.name ? `\n${playerInfo.name}` : ""}\n
+[h1]${chrome.i18n.getMessage("report_steamid")}:[/h1]${playerInfo.steamid ? `\n[url=https://nxserv.gg/profiles/${playerInfo.steamid}]${playerInfo.steamid}[/url]` : ""}\n
 [h1]${chrome.i18n.getMessage("report_date")}:[/h1]\n${chrome.i18n.getMessage("dateString", new Date().toLocaleString().split(" "))}\n
 [h1]${chrome.i18n.getMessage("report_location")}:[/h1]\n
-[h1]${chrome.i18n.getMessage("report_brokenrules")}:[/h1]\n${brokenRulesToPrint}[h1]${chrome.i18n.getMessage("report_proofs")}:[/h1]\n
+[h1]${chrome.i18n.getMessage("report_brokenrules")}:[/h1]\n${brokenRulesToPrint}
+[h1]${chrome.i18n.getMessage("report_proofs")}:[/h1]
 `
 
     const textarea = tabs.getElementsByTagName("textarea")[0]
     if(textarea) {textarea.addAtCaret(report)} 
-
-    dialog.close()
 }
 
-function writeTTTReportTemplate(dialog, brokenRules) {
+function writeTTTReportTemplate(playerInfo, brokenRules) {
     const tabs = document.getElementsByClassName("react-tabs")[0]
 
     const title = document.querySelector("input[name='title']")
-    if(title.value!=chrome.i18n.getMessage("report_title")){title.addAtCaret(chrome.i18n.getMessage("report_title"))}
+    if(title.value!=chrome.i18n.getMessage("report_title")){
+        title.addAtCaret(chrome.i18n.getMessage("report_title", [playerInfo.name || `<${chrome.i18n.getMessage("report_name")}>`,
+                                                                playerInfo.steamid || `<${chrome.i18n.getMessage("report_steamid")}>`]))
+    }
 
     let brokenRulesQuotes = []
     for(const section in brokenRules) {
@@ -105,20 +110,63 @@ function writeTTTReportTemplate(dialog, brokenRules) {
 
 
     const report =
-`[h1]${chrome.i18n.getMessage("report_name")}:[/h1]\n
-[h1]${chrome.i18n.getMessage("report_steamid")}:[/h1]\n
+`[h1]${chrome.i18n.getMessage("report_name")}:[/h1]${playerInfo.name ? `\n${playerInfo.name}` : ""}\n
+[h1]${chrome.i18n.getMessage("report_steamid")}:[/h1]${playerInfo.steamid ? `\n[url=https://nxserv.gg/profiles/${playerInfo.steamid}]${playerInfo.steamid}[/url]` : ""}\n
 [h1]${chrome.i18n.getMessage("report_date")}:[/h1]\n${chrome.i18n.getMessage("dateString", new Date().toLocaleString().split(" "))}\n
 [h1]${chrome.i18n.getMessage("report_location")}:[/h1]\n
-[h1]${chrome.i18n.getMessage("report_brokenrules")}:[/h1]\n${brokenRulesToPrint}[h1]${chrome.i18n.getMessage("report_proofs")}:[/h1]\n
+[h1]${chrome.i18n.getMessage("report_brokenrules")}:[/h1]\n${brokenRulesToPrint}
+[h1]${chrome.i18n.getMessage("report_proofs")}:[/h1]
 `
 
     const textarea = tabs.getElementsByTagName("textarea")[0]
     if(textarea) {textarea.addAtCaret(report)} 
-
-    dialog.close()
 }
 
-function askForBrokenRules(serverType) {
+function askForPlayerInfo(serverType) {
+    const dialog = document.createElement("dialog")
+    dialog.classList.add("playerInfo")
+
+    const instructions = document.createElement("h1")
+    instructions.innerText = chrome.i18n.getMessage("givePlayerInfo")
+    dialog.appendChild(instructions)
+
+    const inputDiv = document.createElement("div")
+    inputDiv.classList.add("inputs")
+
+    const name = document.createElement("input")
+    name.classList.add("input")
+    name.placeholder = chrome.i18n.getMessage(serverType == "darkrp" ? "report_rpname" : "report_name")
+    inputDiv.appendChild(name)
+
+    const steamid = document.createElement("input")
+    steamid.classList.add("input")
+    steamid.placeholder = chrome.i18n.getMessage("report_steamid")
+    inputDiv.appendChild(steamid)
+
+    dialog.appendChild(inputDiv)
+
+
+    const validateDiv = document.createElement("div")
+    validateDiv.classList.add("validate")
+    const validateBtn = document.createElement("btn")
+    validateBtn.className = "join button" //Hijacking nx styles
+    validateBtn.innerText = chrome.i18n.getMessage("validate")
+    validateBtn.addEventListener("click", () => {
+        const playerInfo = {
+            name: name.value,
+            steamid: steamid.value
+        }
+        dialog.close()
+        askForBrokenRules(serverType, playerInfo)})
+    validateDiv.appendChild(validateBtn)
+    dialog.appendChild(validateDiv)
+
+    document.body.appendChild(dialog)
+
+    dialog.showModal()
+}
+
+function askForBrokenRules(serverType, playerInfo) {
     const dialog = document.createElement("dialog")
     dialog.classList.add("brokenRules")
 
@@ -158,7 +206,9 @@ function askForBrokenRules(serverType) {
     const validateBtn = document.createElement("btn")
     validateBtn.className = "join button" //Hijacking nx styles
     validateBtn.innerText = chrome.i18n.getMessage("validate")
-    validateBtn.addEventListener("click", () => writeReportTemplate(serverType, dialog, brokenRules))
+    validateBtn.addEventListener("click", () => {
+        dialog.close()
+        writeReportTemplate(serverType, playerInfo, brokenRules)})
     validateDiv.appendChild(validateBtn)
     dialog.appendChild(validateDiv)
     document.body.appendChild(dialog)
@@ -182,13 +232,13 @@ function addReportBuddy() {
     const button_darkrp = document.createElement("btn")
     button_darkrp.classList.add("button")
     button_darkrp.innerText = chrome.i18n.getMessage("reportBuddyBtnDarkRP")
-    button_darkrp.addEventListener("click", () => askForBrokenRules("darkrp"))
+    button_darkrp.addEventListener("click", () => askForPlayerInfo("darkrp"))
     reportBuddy.appendChild(button_darkrp)
 
     const button_ttt = document.createElement("btn")
     button_ttt.classList.add("button")
     button_ttt.innerText = chrome.i18n.getMessage("reportBuddyBtnTTT")
-    button_ttt.addEventListener("click", () => askForBrokenRules("ttt"))
+    button_ttt.addEventListener("click", () => askForPlayerInfo("ttt"))
     reportBuddy.appendChild(button_ttt)
 
     form.insertBefore(reportBuddy, tabs)

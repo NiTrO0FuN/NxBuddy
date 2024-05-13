@@ -59,13 +59,22 @@
 	},
 
 	"selectBrokenRules": {
-		"message":"Выбрать все нарушенные правила",
+		"message": "Выбрать все нарушенные правила",
 		"description": "Заголовок диалогового окна выбора нарушенных правил"
 	},
 
+	"givePlayerInfo": {
+		"message": "Кто нарушитель??",
+		"description": "Player info dialog title"
+	},
+
 	"report_title": {
-		"message": "Жалоба на <имя> | <steamID>",
-		"description": "Название жалобы"
+		"message": "Жалоба на $NAME$ | $STEAMID$",
+		"description": "Название жалобы",
+		"placeholders": {
+			"name": {"content": "$1"},
+			"steamid": {"content": "$2"}
+		}
 	},
 
 	"report_rpname": {

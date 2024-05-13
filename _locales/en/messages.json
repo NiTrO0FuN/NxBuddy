@@ -57,15 +57,24 @@
 		"message": "Confirm",
 		"description": "Validation button label"
 	},
+
+	"givePlayerInfo": {
+		"message": "Who is the offender?",
+		"description": "Player info dialog title"
+	},
 	
 	"selectBrokenRules": {
-		"message":"Please select all broken rules",
+		"message": "Please select all broken rules",
 		"description": "Broken rules dialog selector title"
 	},
 
 	"report_title": {
-		"message":"Report against <name> | <steamID>",
-		"description": "Report post title"
+		"message": "Report against $NAME$ | $STEAMID$",
+		"description": "Report post title",
+		"placeholders": {
+			"name": {"content": "$1"},
+			"steamid": {"content": "$2"}
+		}
 	},
 
 	"report_rpname": {
