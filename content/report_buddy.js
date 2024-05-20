@@ -35,6 +35,12 @@ async function fetchRules(serverType) {
     return newRules
 }
 
+function formatTitle(serverType, playerInfo) {
+    return chrome.i18n.getMessage("report_title",
+    [playerInfo.name || `<${chrome.i18n.getMessage(serverType == "darkrp" ? "report_rpname" : "report_name")}>`,
+    playerInfo.steamid || `<${chrome.i18n.getMessage("report_steamid")}>`])
+}
+
 function writeReportTemplate(serverType, playerInfo, brokenRules) {
     if(serverType === "darkrp"){writeDarkRPReportTemplate(playerInfo, brokenRules)}
     else if(serverType === "ttt"){writeTTTReportTemplate(playerInfo, brokenRules)}
@@ -44,10 +50,7 @@ function writeDarkRPReportTemplate(playerInfo, brokenRules) {
     const tabs = document.getElementsByClassName("react-tabs")[0]
 
     const title = document.querySelector("input[name='title']")
-    if(title.value!=chrome.i18n.getMessage("report_title")){
-        title.addAtCaret(chrome.i18n.getMessage("report_title", [playerInfo.name || `<${chrome.i18n.getMessage("report_rpname")}>`,
-                                                                playerInfo.steamid || `<${chrome.i18n.getMessage("report_steamid")}>`]))
-    }
+    if(title.value!=formatTitle("darkrp",playerInfo)){title.addAtCaret(formatTitle("darkrp",playerInfo))}
 
     let brokenRulesQuotes = []
     for(const section in brokenRules) {
@@ -85,10 +88,7 @@ function writeTTTReportTemplate(playerInfo, brokenRules) {
     const tabs = document.getElementsByClassName("react-tabs")[0]
 
     const title = document.querySelector("input[name='title']")
-    if(title.value!=chrome.i18n.getMessage("report_title")){
-        title.addAtCaret(chrome.i18n.getMessage("report_title", [playerInfo.name || `<${chrome.i18n.getMessage("report_name")}>`,
-                                                                playerInfo.steamid || `<${chrome.i18n.getMessage("report_steamid")}>`]))
-    }
+    if(title.value!=formatTitle("ttt",playerInfo)){title.addAtCaret(formatTitle("ttt",playerInfo))}
 
     let brokenRulesQuotes = []
     for(const section in brokenRules) {
