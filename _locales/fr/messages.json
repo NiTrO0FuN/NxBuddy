@@ -34,6 +34,11 @@
     "description": "Label pour le basculement ImgBB"
   },
 
+  "primaryColorToggleLabel": {
+    "message": "Thème personnalisé",
+    "description": "Label for the primary color toggle"
+  },
+
   "primaryColorLabel": {
     "message": "Thème du site web",
     "description": "Label for the primary color input"

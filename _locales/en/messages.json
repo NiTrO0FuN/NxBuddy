@@ -34,6 +34,11 @@
     "description": "Label for the ImgBB toggle"
   },
 
+  "primaryColorToggleLabel": {
+    "message": "Custom website theme",
+    "description": "Label for the primary color toggle"
+  },
+
   "primaryColorLabel": {
     "message": "Website theme",
     "description": "Label for the primary color input"
