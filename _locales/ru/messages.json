@@ -34,6 +34,11 @@
     "description": "Заголовок для ImgBB флажка"
   },
 
+  "primaryColorToggleLabel": {
+    "message": "Пользовательская тема",
+    "description": "Label for the primary color toggle"
+  },
+
   "primaryColorLabel": {
     "message": "Тема сайта",
     "description": "Label for the primary color input"
