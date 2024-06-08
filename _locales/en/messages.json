@@ -1,124 +1,129 @@
 {
-	"extensionName": {
-		"message": "NxBuddy",
-		"description": "Extension name"
-	},
+  "extensionName": {
+    "message": "NxBuddy",
+    "description": "Extension name"
+  },
 
-	"extensionDescription": {
-		"message": "Improves the https://nxserv.gg/ website by adding functionalities such as a player connected status and an easy image upload for post!",
-		"description": "Extension description"
-	},
+  "extensionDescription": {
+    "message": "Improves the https://nxserv.gg/ website by adding functionalities such as a player connected status and an easy image upload for post!",
+    "description": "Extension description"
+  },
 
-	"toggleOnlineStatus": {
-		"message": "Quick online visualisator",
-		"description": "Label for the online status toggle"
-	},
+  "toggleOnlineStatus": {
+    "message": "Quick online indicator",
+    "description": "Label for the online status toggle"
+  },
 
-	"apiKey": {
-		"message": "ImgBB API key",
-		"description": "Label for API key input"
-	},
+  "apiKey": {
+    "message": "ImgBB API key",
+    "description": "Label for API key input"
+  },
 
-	"apiKey_placeholder": {
-		"message": "Your ImgBB API key (32 characters)",
-		"description": "Placeholder for the API key input"
-	},
+  "apiKey_placeholder": {
+    "message": "Your ImgBB API key (32 characters)",
+    "description": "Placeholder for the API key input"
+  },
 
-	"wrongAPIkey": {
-		"message": "Error, incorrect API key",
-		"description": "Error 400 when trying to upload image into textarea"
-	},
+  "wrongAPIkey": {
+    "message": "Error, incorrect API key",
+    "description": "Error 400 when trying to upload image into textarea"
+  },
 
-	"toggleImgBB": {
-		"message": "ImgBB auto-upload",
-		"description": "Label for the ImgBB toggle"
-	},
+  "toggleImgBB": {
+    "message": "ImgBB auto-upload",
+    "description": "Label for the ImgBB toggle"
+  },
 
-	"reportBuddyBtnDarkRP": {
-		"message": "Use DarkRP report template",
-		"description": "Label for the report template button"
-	},
+  "primaryColorLabel": {
+    "message": "Website theme",
+    "description": "Label for the primary color input"
+  },
 
-	"reportBuddyBtnTTT": {
-		"message": "Use TTT report template",
-		"description": "Label for the report template button"
-	},
+  "reportBuddyBtnDarkRP": {
+    "message": "Use DarkRP report template",
+    "description": "Label for the report template button"
+  },
 
-	"dateString": {
-		"message": "$DATE$ at $TIME$",
-		"description": "Date and time in human readable format",
-		"placeholders": {
-			"date": {"content": "$1"},
-			"time": {"content": "$2"}
-		}
-	},
+  "reportBuddyBtnTTT": {
+    "message": "Use TTT report template",
+    "description": "Label for the report template button"
+  },
 
-	"validate": {
-		"message": "Confirm",
-		"description": "Validation button label"
-	},
+  "dateString": {
+    "message": "$DATE$ at $TIME$",
+    "description": "Date and time in human readable format",
+    "placeholders": {
+      "date": { "content": "$1" },
+      "time": { "content": "$2" }
+    }
+  },
 
-	"givePlayerInfo": {
-		"message": "Who is the offender?",
-		"description": "Player info dialog title"
-	},
-	
-	"selectBrokenRules": {
-		"message": "Please select all broken rules",
-		"description": "Broken rules dialog selector title"
-	},
+  "validate": {
+    "message": "Confirm",
+    "description": "Validation button label"
+  },
 
-	"report_title": {
-		"message": "Report against $NAME$ | $STEAMID$",
-		"description": "Report post title",
-		"placeholders": {
-			"name": {"content": "$1"},
-			"steamid": {"content": "$2"}
-		}
-	},
+  "givePlayerInfo": {
+    "message": "Who is the offender?",
+    "description": "Player info dialog title"
+  },
 
-	"report_rpname": {
-		"message": "RP name of violator",
-		"description": "Field for player report"
-	},
+  "selectBrokenRules": {
+    "message": "Please select all broken rules",
+    "description": "Broken rules dialog selector title"
+  },
 
-	"report_name": {
-		"message": "Name of violator",
-		"description": "Field for player report"
-	},
+  "report_title": {
+    "message": "Report against $NAME$ | $STEAMID$",
+    "description": "Report post title",
+    "placeholders": {
+      "name": { "content": "$1" },
+      "steamid": { "content": "$2" }
+    }
+  },
 
-	"report_steamid": {
-		"message": "SteamID",
-		"description": "Field for player report"
-	},
+  "report_rpname": {
+    "message": "RP name of violator",
+    "description": "Field for player report"
+  },
 
-	"report_date": {
-		"message": "Date and time",
-		"description": "Field for player report"
-	},
+  "report_name": {
+    "message": "Name of violator",
+    "description": "Field for player report"
+  },
 
-	"report_location": {
-		"message": "Server where this violation occured",
-		"description": "Field for player report"
-	},
+  "report_steamid": {
+    "message": "SteamID",
+    "description": "Field for player report"
+  },
 
-	"report_brokenrules": {
-		"message": "Rules broken",
-		"description": "Field for player report"
-	},
+  "report_date": {
+    "message": "Date and time",
+    "description": "Field for player report"
+  },
 
-	"report_proofs": {
-		"message": "Proof(s) (screenshots or videos)",
-		"description": "Field for player report"
-	},
+  "report_location": {
+    "message": "Server where this violation occured",
+    "description": "Field for player report"
+  },
 
-	"search": {
-		"message": "Search",
-		"description": "Search button label"
-	},
+  "report_brokenrules": {
+    "message": "Rules broken",
+    "description": "Field for player report"
+  },
 
-	"search_placeholder": {
-		"message": "Content to search",
-		"description": "Search label placeholder"
-	}
+  "report_proofs": {
+    "message": "Proof(s) (screenshots or videos)",
+    "description": "Field for player report"
+  },
+
+  "search": {
+    "message": "Search",
+    "description": "Search button label"
+  },
+
+  "search_placeholder": {
+    "message": "Content to search",
+    "description": "Search label placeholder"
+  }
 }
