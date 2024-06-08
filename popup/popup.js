@@ -28,38 +28,47 @@ apiKeyInput.oninput = function () {
   }
 };
 
-chrome.storage.local.get("apiKey").then((r) => {
+ImgBBLabel.innerText = chrome.i18n.getMessage("toggleImgBB");
+ImgBBToggle.oninput = function () {
+  chrome.storage.local.set({ imgbb: this.checked });
+};
+
+chrome.storage.local.get(["apiKey", "imgbb"]).then((r) => {
   if (r.apiKey) {
     apiKeyInput.value = r.apiKey;
     if (isAPIkeyValid(r.apiKey)) {
       ImgBBToggle.disabled = false;
     }
   }
-});
-
-ImgBBLabel.innerText = chrome.i18n.getMessage("toggleImgBB");
-ImgBBToggle.oninput = function () {
-  chrome.storage.local.set({ imgbb: this.checked });
-};
-
-chrome.storage.local.get("imgbb").then((r) => {
   if (r.imgbb) {
     ImgBBToggle.checked = r.imgbb;
   }
 });
 
 // Color changer
-const primaryColorLabel = document.getElementById("colorChanger").children[0];
+
+const primaryColorToggleLabel = document.getElementById("colorChanger").children[0].children[0];
+const primaryColorToggle = document.getElementById("colorChanger").children[0].getElementsByTagName("input")[0];
+const primaryColorInputLabel = document.getElementById("colorChanger").children[1].children[0];
 const primaryColorInput = ColorPicker(document.getElementById("primaryColor"), function (_, hsv) {
   chrome.storage.local.set({ primaryColor: hsv });
 });
 
-chrome.storage.local.get("primaryColor").then((r) => {
+primaryColorToggleLabel.innerText = chrome.i18n.getMessage("primaryColorToggleLabel");
+primaryColorToggle.oninput = async function () {
+  chrome.storage.local.set({ wantTheme: this.checked });
+};
+
+primaryColorInputLabel.innerText = chrome.i18n.getMessage("primaryColorLabel");
+
+chrome.storage.local.get(["wantTheme", "primaryColor"]).then((r) => {
+  if (r.wantTheme) {
+    primaryColorToggle.checked = r.wantTheme;
+  }
   if (r.primaryColor) {
     primaryColorInput.setHsv(r.primaryColor);
   }
 });
-primaryColorLabel.innerText = chrome.i18n.getMessage("primaryColorLabel");
 
 function isAPIkeyValid(key) {
   return /^[a-zA-Z0-9]{32}$/.test(key);

@@ -54,12 +54,15 @@ function changeTheme(primaryColor) {
 
 var wantOnlineStatus = false;
 var wantAutoUpload = false;
-chrome.storage.local.get(["onlineStatus", "imgbb", "primaryColor"]).then((r) => {
+chrome.storage.local.get(["onlineStatus", "imgbb", "wantTheme", "primaryColor"]).then((r) => {
   if (r.onlineStatus) {
     wantOnlineStatus = r.onlineStatus;
   }
   if (r.imgbb) {
     wantAutoUpload = r.imgbb;
+  }
+  if (r.wantTheme) {
+    document.body.classList.add("themed");
   }
   if (r.primaryColor) {
     changeTheme(r.primaryColor);
@@ -135,6 +138,10 @@ chrome.storage.local.onChanged.addListener((changes) => {
   }
   if (changes.imgbb) {
     wantAutoUpload = changes.imgbb.newValue;
+  }
+  if (changes.wantTheme) {
+    if (changes.wantTheme.newValue) document.body.classList.add("themed");
+    else document.body.classList.remove("themed");
   }
   if (changes.primaryColor) {
     changeTheme(changes.primaryColor.newValue);

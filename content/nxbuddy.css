@@ -1,26 +1,29 @@
 /* Theme changer */
+
 body {
   --primary-color: #005bbb;
   --secondary-color: #004791;
   --hover-color: #0067b1;
 }
 
-header {
-  background-color: var(--primary-color);
-}
-
-.menu {
-  background-color: var(--secondary-color);
-  .active {
+.themed {
+  header {
     background-color: var(--primary-color);
   }
-  span:hover {
-    background-color: var(--hover-color);
-  }
-}
 
-.forum-thread-locked .forum-thread-body {
-  background-color: var(--secondary-color);
+  .menu {
+    background-color: var(--secondary-color);
+    .active {
+      background-color: var(--primary-color);
+    }
+    span:hover {
+      background-color: var(--hover-color);
+    }
+  }
+
+  .forum-thread-locked .forum-thread-body {
+    background-color: var(--secondary-color);
+  }
 }
 
 /* Online indicator */
