@@ -1,36 +1,129 @@
 {
-	"extensionName": {
-		"message": "NxBuddy",
-		"description": "Название расширения"
-	},
+  "extensionName": {
+    "message": "NxComrade",
+    "description": "Название расширения"
+  },
 
-	"extensionDescription": {
-		"message": "Улучшает веб-сайт Nx за счет дополнительных функций",
-		"description": "Описание расширения"
-	},
+  "extensionDescription": {
+    "message": "Улучшает веб-сайт Nx за счет дополнительных функций",
+    "description": "Описание расширения"
+  },
 
-	"toggleOnlineStatus": {
-		"message": "Быстрый онлайн-визуализатор",
-		"description": "Заголовок для флажка онлайн-статуса"
-	},
+  "toggleOnlineStatus": {
+    "message": "Быстрый онлайн-визуализатор",
+    "description": "Заголовок для флажка онлайн-статуса"
+  },
 
-	"apiKey": {
-		"message": "ImgBB API ключ",
-		"description": "Вывеска для ввода API ключа"
-	},
+  "apiKey": {
+    "message": "ImgBB API ключ",
+    "description": "Вывеска для ввода API ключа"
+  },
 
-	"apiKey_placeholder": {
-		"message": "Ваш ImgBB API ключ (32 символа)",
-		"description": "Заголовок для ввода API ключа"
-	},
+  "apiKey_placeholder": {
+    "message": "Ваш ImgBB API ключ (32 символа)",
+    "description": "Заголовок для ввода API ключа"
+  },
 
-	"wrongAPIkey": {
-		"message": "Ошибка, неверный API ключ",
-		"description": "Ошибка при попытке загрузить изображения в текстовую зону."
-	},
+  "wrongAPIkey": {
+    "message": "Ошибка, неверный API ключ",
+    "description": "Ошибка при попытке загрузить изображения в текстовую зону."
+  },
 
-	"toggleImgBB": {
-		"message": "ImgBB авто-загрузка",
-		"description": "Заголовок для ImgBB флажка"
-	}
+  "toggleImgBB": {
+    "message": "ImgBB авто-загрузка",
+    "description": "Заголовок для ImgBB флажка"
+  },
+
+  "primaryColorToggleLabel": {
+    "message": "Пользовательская тема",
+    "description": "Label for the primary color toggle"
+  },
+
+  "primaryColorLabel": {
+    "message": "Тема сайта",
+    "description": "Label for the primary color input"
+  },
+
+  "reportBuddyBtnDarkRP": {
+    "message": "Использовать шаблон отчета DarkRP",
+    "description": "Метка для кнопки шаблона жалобы"
+  },
+
+  "reportBuddyBtnTTT": {
+    "message": "Использовать шаблон отчета TTT",
+    "description": "Метка для кнопки шаблона жалобы"
+  },
+
+  "dateString": {
+    "message": "$DATE$ в $TIME$",
+    "description": "Дата и время в удобочитаемом формате.",
+    "placeholders": {
+      "date": { "content": "$1" },
+      "time": { "content": "$2" }
+    }
+  },
+
+  "validate": {
+    "message": "Подтвердить",
+    "description": "Метка кнопки проверки"
+  },
+
+  "selectBrokenRules": {
+    "message": "Выбрать все нарушенные правила",
+    "description": "Заголовок диалогового окна выбора нарушенных правил"
+  },
+
+  "givePlayerInfo": {
+    "message": "Кто нарушитель??",
+    "description": "Player info dialog title"
+  },
+
+  "report_title": {
+    "message": "Жалоба на $NAME$ | $STEAMID$",
+    "description": "Название жалобы",
+    "placeholders": {
+      "name": { "content": "$1" },
+      "steamid": { "content": "$2" }
+    }
+  },
+
+  "report_rpname": {
+    "message": "Название ролевой игры",
+    "description": "Поле в жалобе"
+  },
+
+  "report_name": {
+    "message": "имя нарушителя",
+    "description": "Поле в жалобе"
+  },
+
+  "report_date": {
+    "message": "Дата и час",
+    "description": "Field for player report"
+  },
+
+  "report_location": {
+    "message": "Сервер, где это произошло",
+    "description": "Поле в жалобе"
+  },
+
+  "report_brokenrules": {
+    "message": "Правило(а) нарушено",
+    "description": "Поле в жалобе"
+  },
+
+  "report_proofs": {
+    "message": "Доказательства (скриншоты и видео)",
+    "description": "Поле в жалобе"
+  },
+
+  "search": {
+    "message": "Исследовать",
+    "description": "Метка кнопки поиска"
+  },
+
+  "search_placeholder": {
+    "message": "Контент для поиска",
+    "description": "Заполнитель метки поиска"
+  }
 }

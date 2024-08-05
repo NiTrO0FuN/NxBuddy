@@ -5,19 +5,19 @@
   },
 
   "extensionDescription": {
-    "message": "Améliore le site Web Nx avec des fonctionnalités supplémentaires.",
+    "message": "Améliore le site https://nxserv.gg/ en ajoutant des fonctionnalités telles qu'un indicateur de connexion et un uploader d'images!",
     "description": "Description de l'extension"
   },
-  
+
   "toggleOnlineStatus": {
     "message": "Visualiseur de connexion",
     "description": "Label pour le basculement du visualiseur de connexion"
   },
 
   "apiKey": {
-		"message": "Clé API ImgBB",
-		"description": "Label pour le clé API ImgBB"
-	},
+    "message": "Clé API ImgBB",
+    "description": "Label pour le clé API ImgBB"
+  },
 
   "apiKey_placeholder": {
     "message": "Votre clé API ImgBB (32 charactères)",
@@ -25,12 +25,105 @@
   },
 
   "wrongAPIkey": {
-		"message": "Erreur, clé API incorrecte",
-		"description": "Erreur lors de l'upload de l'image dans le textarea"
-	},
+    "message": "Erreur, clé API incorrecte",
+    "description": "Erreur lors de l'upload de l'image dans le textarea"
+  },
 
   "toggleImgBB": {
-		"message": "ImgBB auto-upload",
-		"description": "Label pour le basculement ImgBB"
-	}
+    "message": "ImgBB auto-upload",
+    "description": "Label pour le basculement ImgBB"
+  },
+
+  "primaryColorToggleLabel": {
+    "message": "Thème personnalisé",
+    "description": "Label for the primary color toggle"
+  },
+
+  "primaryColorLabel": {
+    "message": "Thème du site web",
+    "description": "Label for the primary color input"
+  },
+
+  "reportBuddyBtnDarkRP": {
+    "message": "Utiliser le template de plainte DarkRP",
+    "description": "Label pour le bouton de template de plainte"
+  },
+
+  "reportBuddyBtnTTT": {
+    "message": "Utiliser le template de plainte TTT",
+    "description": "Label pour le bouton de template de plainte"
+  },
+
+  "dateString": {
+    "message": "$DATE$ à $TIME$",
+    "description": "Date et heure dans un format lisible par les humains",
+    "placeholders": {
+      "date": { "content": "$1" },
+      "time": { "content": "$2" }
+    }
+  },
+
+  "validate": {
+    "message": "Valider",
+    "description": "Label du bouton de validation"
+  },
+
+  "selectBrokenRules": {
+    "message": "Séléctionnez toutes les règles enfreintes",
+    "description": "Titre de la fenêtre de dialogue pour séléctionner les règles enfreintes"
+  },
+
+  "givePlayerInfo": {
+    "message": "Qui est le joueur visé par la plainte ?",
+    "description": "Player info dialog title"
+  },
+
+  "report_title": {
+    "message": "Plainte contre $NAME$ | $STEAMID$",
+    "description": "Titre de la plainte",
+    "placeholders": {
+      "name": { "content": "$1" },
+      "steamid": { "content": "$2" }
+    }
+  },
+
+  "report_rpname": {
+    "message": "Nom RP",
+    "description": "Champ de la plainte"
+  },
+
+  "report_name": {
+    "message": "Pseudo",
+    "description": "Champ de la plainte"
+  },
+
+  "report_date": {
+    "message": "Date et heure",
+    "description": "Champ de la plainte"
+  },
+
+  "report_location": {
+    "message": "Serveur où cela s'est produit",
+    "description": "Champ de la plainte"
+  },
+
+  "report_brokenrules": {
+    "message": "Règle(s) enfreinte(s)",
+    "description": "Champ de la plainte"
+  },
+
+  "report_proofs": {
+    "message": "Preuve(s) (screenshots ou vidéos)",
+    "description": "Champ de la plainte"
+  },
+
+  "search": {
+    "message": "Rechercher",
+    "description": "Label du bouton de recherche"
+  },
+
+  "search_placeholder": {
+    "message": "Contenu à rechercher",
+    "description": "Placeholder du label de recherche"
+  }
 }
