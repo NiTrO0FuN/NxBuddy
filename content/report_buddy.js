@@ -16,7 +16,9 @@ async function fetchRules(serverType) {
   let parser = new DOMParser();
   const result = await (await fetch("https://nxserv.gg/help/rules/" + serverType)).text();
   const rules_html = parser.parseFromString(result, "text/html");
-  const sectionsDiv = rules_html.getElementsByClassName("gamerules")[0].querySelectorAll(":scope > div");
+  const sectionsDiv = rules_html
+    .getElementsByClassName("gamerules")[0]
+    .querySelectorAll(":scope > div");
 
   for (const sectionDiv of sectionsDiv) {
     const sectionName = sectionDiv.getElementsByTagName("h2")[0].innerText;
@@ -37,7 +39,8 @@ async function fetchRules(serverType) {
 
 function formatTitle(serverType, playerInfo) {
   return chrome.i18n.getMessage("report_title", [
-    playerInfo.name || `<${chrome.i18n.getMessage(serverType == "darkrp" ? "report_rpname" : "report_name")}>`,
+    playerInfo.name ||
+      `<${chrome.i18n.getMessage(serverType == "darkrp" ? "report_rpname" : "report_name")}>`,
     playerInfo.steamid || `<${chrome.i18n.getMessage("report_steamid")}>`,
   ]);
 }
@@ -54,7 +57,7 @@ function writeDarkRPReportTemplate(playerInfo, brokenRules) {
   const tabs = document.getElementsByClassName("react-tabs")[0];
 
   const title = document.querySelector("input[name='title']");
-  if (title.value != formatTitle("darkrp", playerInfo)) {
+  if (title && title.value != formatTitle("darkrp", playerInfo)) {
     title.addAtCaret(formatTitle("darkrp", playerInfo));
   }
 
@@ -65,7 +68,9 @@ function writeDarkRPReportTemplate(playerInfo, brokenRules) {
       for (const ruleNbr in brokenRules[section][subSection]) {
         if (!brokenRules[section][subSection][ruleNbr]) continue;
 
-        brokenRulesText += `\n${parseInt(ruleNbr) + 1}. ${rules.darkrp[section][subSection][ruleNbr]}`;
+        brokenRulesText += `\n${parseInt(ruleNbr) + 1}. ${
+          rules.darkrp[section][subSection][ruleNbr]
+        }`;
       }
       if (brokenRulesText == "") continue;
 
@@ -78,9 +83,13 @@ function writeDarkRPReportTemplate(playerInfo, brokenRules) {
     brokenRulesToPrint += `[quote]${quote}[/quote]\n`;
   }
 
-  const report = `[h1]${chrome.i18n.getMessage("report_rpname")}:[/h1]${playerInfo.name ? `\n${playerInfo.name}` : ""}\n
+  const report = `[h1]${chrome.i18n.getMessage("report_rpname")}:[/h1]${
+    playerInfo.name ? `\n${playerInfo.name}` : ""
+  }\n
 [h1]${chrome.i18n.getMessage("report_steamid")}:[/h1]${
-    playerInfo.steamid ? `\n[url=https://nxserv.gg/profiles/${playerInfo.steamid}]${playerInfo.steamid}[/url]` : ""
+    playerInfo.steamid
+      ? `\n[url=https://nxserv.gg/profiles/${playerInfo.steamid}]${playerInfo.steamid}[/url]`
+      : ""
   }\n
 [h1]${chrome.i18n.getMessage("report_date")}:[/h1]\n${chrome.i18n.getMessage(
     "dateString",
@@ -101,7 +110,7 @@ function writeTTTReportTemplate(playerInfo, brokenRules) {
   const tabs = document.getElementsByClassName("react-tabs")[0];
 
   const title = document.querySelector("input[name='title']");
-  if (title.value != formatTitle("ttt", playerInfo)) {
+  if (title && title.value != formatTitle("ttt", playerInfo)) {
     title.addAtCaret(formatTitle("ttt", playerInfo));
   }
 
@@ -125,9 +134,13 @@ function writeTTTReportTemplate(playerInfo, brokenRules) {
     brokenRulesToPrint += `[quote]${quote}[/quote]\n`;
   }
 
-  const report = `[h1]${chrome.i18n.getMessage("report_name")}:[/h1]${playerInfo.name ? `\n${playerInfo.name}` : ""}\n
+  const report = `[h1]${chrome.i18n.getMessage("report_name")}:[/h1]${
+    playerInfo.name ? `\n${playerInfo.name}` : ""
+  }\n
 [h1]${chrome.i18n.getMessage("report_steamid")}:[/h1]${
-    playerInfo.steamid ? `\n[url=https://nxserv.gg/profiles/${playerInfo.steamid}]${playerInfo.steamid}[/url]` : ""
+    playerInfo.steamid
+      ? `\n[url=https://nxserv.gg/profiles/${playerInfo.steamid}]${playerInfo.steamid}[/url]`
+      : ""
   }\n
 [h1]${chrome.i18n.getMessage("report_date")}:[/h1]\n${chrome.i18n.getMessage(
     "dateString",
@@ -157,7 +170,9 @@ function askForPlayerInfo(serverType) {
 
   const name = document.createElement("input");
   name.classList.add("input");
-  name.placeholder = chrome.i18n.getMessage(serverType == "darkrp" ? "report_rpname" : "report_name");
+  name.placeholder = chrome.i18n.getMessage(
+    serverType == "darkrp" ? "report_rpname" : "report_name"
+  );
   inputDiv.appendChild(name);
 
   const steamid = document.createElement("input");
