@@ -60,7 +60,7 @@ async function validate_search_content(input, checkboxs, button, spinner) {
 
 async function search_content(content, languages) {
   const request = new URL(API_URL);
-  request.pathname = "/search";
+  request.pathname = "/nxbuddy/search";
   request.search = new URLSearchParams({ content: content, lang: languages.join("|") });
   response = await fetch(request);
   if (response.status == 200) {
